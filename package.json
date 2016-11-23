@@ -1,0 +1,12 @@
+{
+  "name": "lamassu-mock-id-verify",
+  "version": "1.0.0",
+  "description": "A fake id verification service for testing lamassu-server",
+  "main": "index.js",
+  "repository": {
+    "url": "https://github.com/lamassu/lamassu-mock-id-verify.git",
+    "type": "git"
+  },
+  "author": "Josh Harvey <josh@lamassu.is>",
+  "license": "Unlicense"
+}
