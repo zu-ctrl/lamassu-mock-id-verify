@@ -4,25 +4,27 @@ function pp (o) {
   console.log(util.inspect(o, {depth: null, colors: true}))
 }
 
-function verifyTransaction (data, cb) {
+function verifyTransaction (account, data) {
   console.log('DEBUG: Mock ID verifyTransaction')
   pp(data)
-  setTimeout(() => cb(null, {success: true}), 2000)
+
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve({success: true}), 2000)
+  })
 }
 
-function verifyUser (data, cb) {
+function verifyUser (account, data) {
   console.log('DEBUG: Mock ID verifyUser')
   pp(data)
-  const success = data.license.lastName === 'NAKAMOTO'
-  setTimeout(() => cb(null, {success}), 2000)
-}
 
-function config () {}
+  const success = data.license.lastName === 'NAKAMOTO'
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve({success}), 2000)
+  })
+}
 
 module.exports = {
   verifyTransaction,
   verifyUser,
-  config,
-  SUPPORTED_MODULES: ['idVerifier'],
   NAME: 'MockIdVerify'
 }
