@@ -1,6 +1,6 @@
 {
   "name": "lamassu-mock-id-verify",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A fake id verification service for testing lamassu-server",
   "main": "index.js",
   "repository": {
